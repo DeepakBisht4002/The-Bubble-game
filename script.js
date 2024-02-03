@@ -1,8 +1,6 @@
 //Global Variables//
 var score = 0;
 var hitrn = 0;
-var audiogo = new Audio('game_over.mp3')
-var bubbleclick = new Audio('bubble-sound.mp3')
 
 function makeBubble() {
     var clutter = '';
@@ -22,8 +20,7 @@ function runTimer() {
         else {
             clearInterval(timInt);
             document.querySelector('#pbtm').innerHTML = `<h1 id='gameover_info'>Game Over</h1>`;
-            audiogo.play();
-            updateHighScore();
+        
 
         }
     }, 1000);
@@ -54,7 +51,6 @@ document.querySelector('#pbtm').addEventListener('click', function (bubble) {
     let bubbleText = Number(bubble.target.textContent);
 
     if (bubbleText === hitrn) {
-        updateScore();
         getnewHit();
         makeBubble();
     }
